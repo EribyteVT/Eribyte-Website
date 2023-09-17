@@ -1,5 +1,5 @@
 body{
-    background-color: #c2c2c8;
+    background-color: #deb8d9;
     color: black;
 }
 
@@ -135,4 +135,31 @@ table, th, td {
     text-align: center; 
     padding-top: 1em;
     font-size:3em
+}
+
+.gridSchedule{
+    display: grid;
+    grid-column-gap: 0px;
+    column-gap: 0px;
+    grid-template-columns: 33% 66%;
+    grid-row-gap: 3em;
+}
+
+.TableHeader{
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.scheduleDay{
+    font-size: 2em;
+    text-indent: 1em;
+    background-color: #a08fbd;
+    border-radius: 25px;
+}
+
+.scheduleStream{
+    font-size: 2em;
+    text-indent: 1em;
+    background-color: #a08fbd;
+    border-radius: 25px;
 }
