@@ -49,3 +49,52 @@ footer{
     position: absolute;
     bottom: 5px;
 }
+
+.gridman{
+    display: grid;
+    grid-column-gap: 0px;
+    column-gap: 0px;
+    grid-template-columns: 50% 50% ;
+    grid-template-rows: 33% 33% 33%;
+}
+
+.EribyteImage{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    width:100%;
+}
+
+.Schedule{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width:100%;
+    top:2em;
+}
+
+table{
+    width:100%;
+    text-align: center;
+    height:100%
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.centerPlz{
+    text-align: center;
+}
+
+.schedule_img{
+    max-width: 100%;
+
+}
+
+.Bottommost{
+    position: absolute;
+    bottom: 5px;
+}
