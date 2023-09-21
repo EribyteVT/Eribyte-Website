@@ -19,7 +19,7 @@ window.onload = function() {
         console.log("its halloween");
     }
     else{
-        document.getElementById("SpecialVideo").innerHTML=ngguu
+        // document.getElementById("SpecialVideo").innerHTML=ngguu
         console.log("its not halloween");
     }
 
