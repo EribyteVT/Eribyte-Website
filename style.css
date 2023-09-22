@@ -150,7 +150,7 @@ table, th, td {
     display: grid;
     grid-column-gap: 0px;
     column-gap: 0px;
-    grid-template-columns: 33% 66%;
+    grid-template-columns: 100%;
     grid-row-gap: 3em;
 }
 
@@ -167,6 +167,18 @@ table, th, td {
 }
 
 .scheduleStream{
+    font-size: 2em;
+    text-indent: 1em;
+    background-color: #a08fbd;
+    border-radius: 25px;
+}
+
+.gridRow{
+    display: grid;
+    grid-template-columns: 20% 13% 66%;
+}
+
+.scheduleDate{
     font-size: 2em;
     text-indent: 1em;
     background-color: #a08fbd;

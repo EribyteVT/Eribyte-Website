@@ -5,11 +5,8 @@ window.onload = function() {
     const d = new Date();
     var month = d.getMonth() +1;
     var day = d.getDate();
-    console.log(month)
-    console.log(day)
 
     if(month == 4 && day == 1){
-        
         document.getElementById("bodytag").style.fontFamily = "Wingdings";
         console.log("it's april fools day");
     }
