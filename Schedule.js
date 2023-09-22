@@ -4,13 +4,24 @@ Date.prototype.addDays = function(days) {
     return date;
 }
 
-Date.prototype.addMonths = function(months) {
-    var date = new Date(this.valueOf());
-    date.setMonth(date.getMonth() + months);
-    return date;
+var secondsUntil
+var countdown
+
+function subSecond(){
+    secondsUntil = secondsUntil -1
+    var hoursUntil = Math.floor(secondsUntil / 3600)
+
+    var minutesUntil = Math.floor((secondsUntil%3600) / 60)
+
+    var goodSecondsUntil = secondsUntil % 60
+
+    countdown.innerHTML = hoursUntil.toString()+":"+(minutesUntil<10?'0':'')+minutesUntil.toString() +":"+(goodSecondsUntil<10?'0':'')+goodSecondsUntil.toString()
+
 }
 
+
 window.onload = function() {
+    countdown = document.getElementById("Countdown")
     var d = new Date();
     
     const weekdayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -71,11 +82,8 @@ window.onload = function() {
             }
             base = ["<div class = gridRow><div class = 'scheduleDay'>", "DAY_PLACEHOLDER","</div><div class='scheduleDate'>", "PLACEHOLDER DATE" ,"</div><div class = 'scheduleStream'>","STREAM_NAME", " at ", "STREAM TIME","</div></div>"]
             if(streamObject != null){
-                
                 base[1] = weekdayNames[(weekday+i)%7] 
-
                 base[3] = (d.getMonth()+1).toString() +"/"+(d.getDate()).toString()
-
                 base[5] = streamObject.stream
 
                 var AmOrPm = streamObject.date.getHours() >= 12 ? 'pm' : 'am';
@@ -97,10 +105,22 @@ window.onload = function() {
             }
 
             d = d.addDays(1)
-
         }
-
+        var soonestStream = streams[0];
+        var today = new Date();
        
+
+        secondsUntil = Math.floor((soonestStream.date.getTime() - today.getTime())/1000)
+
+        var hoursUntil = Math.floor(secondsUntil / 3600)
+
+        var minutesUntil = Math.floor((secondsUntil%3600) / 60)
+
+        var goodSecondsUntil = secondsUntil % 60
+
+        countdown.innerHTML = hoursUntil.toString()+":"+(minutesUntil<10?'0':'')+minutesUntil.toString() +":"+(goodSecondsUntil<10?'0':'')+goodSecondsUntil.toString()
+
+        setInterval(subSecond, 1000);
 
 
     }
