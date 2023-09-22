@@ -161,14 +161,14 @@ table, th, td {
 
 .scheduleDay{
     font-size: 2em;
-    text-indent: 1em;
+    text-align: center;
     background-color: #a08fbd;
     border-radius: 25px;
 }
 
 .scheduleStream{
     font-size: 2em;
-    text-indent: 1em;
+    text-align: center;
     background-color: #a08fbd;
     border-radius: 25px;
 }
@@ -179,8 +179,8 @@ table, th, td {
 }
 
 .scheduleDate{
+    text-align: center;
     font-size: 2em;
-    text-indent: 1em;
     background-color: #a08fbd;
     border-radius: 25px;
 }
