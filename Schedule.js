@@ -84,7 +84,7 @@ window.onload = function() {
             if(streamObject != null){
                 base[1] = weekdayNames[(weekday+i)%7] 
                 base[3] = (d.getMonth()+1).toString() +"/"+(d.getDate()).toString()
-                base[5] = streamObject.stream
+                base[5] = "<a href='https://twitch.tv/eribytevt'>" + streamObject.stream +"</a>"
 
                 var AmOrPm = streamObject.date.getHours() >= 12 ? 'pm' : 'am';
                 var hours = (streamObject.date.getHours() % 12) || 12;
