@@ -190,3 +190,13 @@ table, th, td {
     border-radius: 25px;
     border: 4px solid #028bb5;
 }
+
+#twitch-embed{
+    height:378px;
+    width: 620px;
+}
+
+iframe{
+    height:378px;
+    width: 620px;
+}
