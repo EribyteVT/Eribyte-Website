@@ -8,11 +8,14 @@ a{
     color:black
 }
 
+
 nav{
     width:100%;
     display:flex;
     justify-content: space-evenly;
     align-items: center;
+    font-size: xx-large;
+    font-weight: bold;
 }
 
 .banner{
