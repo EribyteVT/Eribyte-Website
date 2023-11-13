@@ -107,6 +107,7 @@ window.onload = function() {
             d = d.addDays(1)
         }
         streams = streams.sort( (a,b) => {return a.date>b.date})
+        streams = streams.filter((value) => {return value.date > rightNowMs})
 
         var soonestStream = streams[0];
         var today = new Date();
