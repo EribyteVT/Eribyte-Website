@@ -9,13 +9,16 @@ var countdown
 
 function subSecond(){
     secondsUntil = secondsUntil -1
-    var hoursUntil = Math.floor(secondsUntil / 3600)
+    if(secondsUntil >= 0){
+        var hoursUntil = Math.floor(secondsUntil / 3600)
 
-    var minutesUntil = Math.floor((secondsUntil%3600) / 60)
-
-    var goodSecondsUntil = secondsUntil % 60
-
-    countdown.innerHTML = hoursUntil.toString()+":"+(minutesUntil<10?'0':'')+minutesUntil.toString() +":"+(goodSecondsUntil<10?'0':'')+goodSecondsUntil.toString()
+        var minutesUntil = Math.floor((secondsUntil%3600) / 60)
+    
+        var goodSecondsUntil = secondsUntil % 60
+    
+        countdown.innerHTML = hoursUntil.toString()+":"+(minutesUntil<10?'0':'')+minutesUntil.toString() +":"+(goodSecondsUntil<10?'0':'')+goodSecondsUntil.toString()
+    }
+    
 
 }
 
