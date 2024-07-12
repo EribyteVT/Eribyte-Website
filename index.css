@@ -6,7 +6,7 @@ body {
 
   h1 {
     color: #fff;
-    font-size: 12em;
+    font-size: 14em;
     margin-top: auto;
     margin-bottom: auto;
     text-align: center; /* Center text horizontally */
@@ -76,11 +76,11 @@ body {
 
 .TableHeader{
     font-weight: bold;
-    font-size: 2em;
+    font-size: 5em;
 }
 
 .scheduleStream{
-    font-size: 2em;
+    font-size: 2.5em;
     text-align: center;
     background-color: #dddddd;
     border-radius: 25px;
@@ -90,7 +90,7 @@ body {
 }
 
 .scheduleDate{
-    font-size: 2em;
+    font-size: 2.5em;
     text-align: center;
     background-color: #dddddd;
     border-radius: 25px;
@@ -98,7 +98,7 @@ body {
 }
 
 .scheduleDay{
-    font-size: 2em;
+    font-size: 2.5em;
     text-align: center;
     background-color: #dddddd;
     border-radius: 25px;
