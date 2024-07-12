@@ -58,7 +58,8 @@ body {
 
 .social-button i {
     transition: color 0.3s;
-    margin-right: 0.5em;
+    margin-right: 0.25em;
+    margin-left: 0.25em;
 }
 
 .social-button:hover i {
