@@ -1,5 +1,9 @@
 body {
     background-color: #3d3d3d;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
     font-family: Monospace;
     overflow-x: hidden;
   }
@@ -31,12 +35,6 @@ body {
     object-fit: cover;
   }
 
-  .center-div{
-    margin: auto;
-    width: 100%;
-    padding: 10px;
-    margin-top: 1em;
-  }
 
   .content {
     display: flex;
@@ -56,6 +54,9 @@ body {
     color: #fff;
     font-size: 5em;
     margin: 0 10px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
 }
 
 .social-button i {
@@ -96,6 +97,8 @@ body {
     background-color: #dddddd;
     border-radius: 25px;
     border: 4px solid black;
+    padding-top:.33em;
+    padding-bottom:.33em;
 }
 
 .scheduleDay{
@@ -104,14 +107,35 @@ body {
     background-color: #dddddd;
     border-radius: 25px;
     border: 4px solid black;
+    padding-top:.33em;
+    padding-bottom:.33em;
 }
 
 
-@media (max-width: 1110px) {
+@media (max-width: 1350px) {
     .socials a {
-        font-size: 1.5em;
+        font-size: 4em;
     }
 }
+
+@media (max-width: 1100px) {
+    .socials a {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 900px) {
+    .socials a {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 700px) {
+    .socials a {
+        font-size: 1.2em;
+    }
+}
+
 @media (max-width: 900px) {
     h1 {
         font-size: 10em; /* Adjust font size for smaller screens */
@@ -144,4 +168,45 @@ body {
 #NextStreamCountdown h1{
     font-size: 3em;
     color: black;
+}
+
+.center-div, .socials, .gridSchedule, #NextStreamCountdown {
+    flex-grow: 0;
+}
+
+footer {
+    margin-top: auto;
+    text-align: right;
+    padding: 10px 0;
+    color:white
+}
+
+footer a:visited{
+    color:white;
+  }
+
+  .tooltip {
+    visibility: hidden;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 10px;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap; /* Prevent the tooltip from wrapping */
+    font-size: 0.6em;
+}
+
+.social-button:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
 }
