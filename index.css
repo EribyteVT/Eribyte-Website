@@ -52,11 +52,12 @@ body {
 .social-button {
     text-decoration: none;
     color: #fff;
-    font-size: 5em;
     margin: 0 10px;
     position: relative;
     display: inline-block;
     cursor: pointer;
+    font-size: calc(3.5vw + 1em); /* Scale the font size based on viewport width */
+    transition: font-size 0.01s ease; /* Smooth transition on resize */
 }
 
 .social-button i {
@@ -112,7 +113,8 @@ body {
 }
 
 
-@media (max-width: 1350px) {
+
+/* @media (max-width: 1350px) {
     .socials a {
         font-size: 4em;
     }
@@ -134,7 +136,7 @@ body {
     .socials a {
         font-size: 1.2em;
     }
-}
+} */
 
 @media (max-width: 900px) {
     h1 {
@@ -153,9 +155,9 @@ body {
         font-size: 8em; /* Further adjust font size for very small screens */
     }
 
-    .socials a {
+    /* .socials a {
         font-size: 1.2em;
-    }
+    } */
 }
 
 #NextStreamCountdown {
