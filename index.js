@@ -56,7 +56,7 @@ window.onload = function() {
             
 
             data=object[z]
-            var t = data.streamTableEntityKey.streamDate.split(/[- :]/);
+            var t = data.streamDate.split(/[- :]/);
             var dayHourSplit = t[2].split("T")
 
             // Apply each element to the Date function
