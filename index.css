@@ -6,43 +6,43 @@ body {
     margin: 0;
     font-family: Monospace;
     overflow-x: hidden;
-  }
+}
 
 
-  h1 {
+h1 {
     color: #fff;
     font-size: 14em;
     margin-top: auto;
     margin-bottom: auto;
     text-align: center; /* Center text horizontally */
-  }
+}
 
-  .image-cropper {
+.image-cropper {
     width: 15em;
     height: 15em;
     position: relative;
     overflow: hidden;
     border-radius: 30%;
     align-items: center;
-  }
-  
-  img {
+}
+
+img {
     display: inline;
     margin: 0 auto;
     height: 100%;
     width: 100%;
     width: auto;
     object-fit: cover;
-  }
+}
 
 
-  .content {
+.content {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
- .socials{
+.socials {
     margin-top: 20px; /* Add some space above the social buttons */
     display: flex;
     width: 100%;
@@ -70,48 +70,47 @@ body {
     color: #ddd;
 }
 
-.gridRow{
+.gridRow {
     display: grid;
-    margin-top:.5em;
-    margin-bottom:.5em;
+    margin-top: .5em;
+    margin-bottom: .5em;
     grid-template-columns: 20% 13% 66%;
 }
 
-.TableHeader{
+.TableHeader {
     font-weight: bold;
     font-size: 5em;
 }
 
-.scheduleStream{
+.scheduleStream {
     font-size: 2.5em;
     text-align: center;
     background-color: #dddddd;
     border-radius: 25px;
     border: 4px solid black;
-    padding-top:.33em;
-    padding-bottom:.33em;
+    padding-top: .33em;
+    padding-bottom: .33em;
 }
 
-.scheduleDate{
+.scheduleDate {
     font-size: 2.5em;
     text-align: center;
     background-color: #dddddd;
     border-radius: 25px;
     border: 4px solid black;
-    padding-top:.33em;
-    padding-bottom:.33em;
+    padding-top: .33em;
+    padding-bottom: .33em;
 }
 
-.scheduleDay{
+.scheduleDay {
     font-size: 2.5em;
     text-align: center;
     background-color: #dddddd;
     border-radius: 25px;
     border: 4px solid black;
-    padding-top:.33em;
-    padding-bottom:.33em;
+    padding-top: .33em;
+    padding-bottom: .33em;
 }
-
 
 
 /* @media (max-width: 1350px) {
@@ -146,8 +145,6 @@ body {
     .content {
         flex-direction: column; /* Ensure the image and text stack vertically */
     }
-
-    
 }
 
 @media (max-width: 480px) {
@@ -161,14 +158,16 @@ body {
 }
 
 #NextStreamCountdown {
-    margin-top: 1em;
+    margin-top: 0.25em;
     background-color: #dddddd;
     border-radius: 25px;
     border: 4px solid black;
+    font-size: 3em;
+    color: black;
+    width: 99%;
 }
 
-#NextStreamCountdown h1{
-    font-size: 3em;
+#NextStreamCountdown > div {
     color: black;
 }
 
@@ -180,14 +179,14 @@ footer {
     margin-top: auto;
     text-align: right;
     padding: 10px 0;
-    color:white
+    color: white
 }
 
-footer a:visited{
-    color:white;
-  }
+footer a:visited {
+    color: white;
+}
 
-  .tooltip {
+.tooltip {
     visibility: hidden;
     background-color: white;
     color: black;
@@ -211,4 +210,13 @@ footer a:visited{
 .social-button:hover .tooltip {
     visibility: visible;
     opacity: 1;
+}
+
+.center {
+    width: 100%;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
 }
