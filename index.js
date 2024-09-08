@@ -11,8 +11,9 @@ let streamCountdownEle = document.getElementById("streamCountdown");
 let updateCountdownTimer;
 
 function updateCountdownCheck() {
-    // Buffer time is 2 hours. Once the stream starts we keep the "Stream is NOW" for 2 hours before moving to next stream.
-    let now = new Date();
+    // Buffer time is 2 hours.
+    // Once the stream starts we keep the "Stream is NOW" for 2 hours before moving to next stream.
+    let now = Date.now();
     let timerSet = false;
     // Loop through the streams to get the next timer.
     for (let i = 0; i < streams.length; i++) {
@@ -21,7 +22,7 @@ function updateCountdownCheck() {
         // Get and parse the date.
         let streamDate = Date.parse(soonestStream["date"]);
         // Get the difference between the stream set date and now.
-        let delta = streamDate - now;
+        let delta = (streamDate - now);
         // Add this for debugging to show the Stream Countdown banner.
         // delta = 0;
         // Check if the stream is in the future.
@@ -103,7 +104,6 @@ window.onload = function () {
             let streamDate = new Date(Date.UTC(t[0], t[1] - 1, dayHourSplit[0], dayHourSplit[1], t[3], 0));
             streams.push({"stream": data.streamName, "date": streamDate})
         }
-        // console.log(streams);
         //get time zone
         let zone = new Date().toLocaleTimeString('en-us', {timeZoneName: 'short'}).split(' ')[2]
         //loop through the days, starting with today
@@ -142,12 +142,11 @@ window.onload = function () {
 
             d = d.addDays(1)
         }
-        streams = streams.sort((a, b) => {
-            return a.date > b.date
-        })
         streams = streams.filter((value) => {
             return value.date > rightNowMs
-        })
+        }).sort((a, b) => {
+            return a.date.getTime() - b.date.getTime();
+        });
         updateCountdownCheck();
         updateCountdownTimer = setInterval(updateCountdownCheck, 1000);
     }
