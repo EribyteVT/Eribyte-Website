@@ -93,7 +93,7 @@ window.onload = function () {
         //from the response we get the next week of streams
         //as defined by any stream starting between now and 7 days worth of MS in the future. This is a bad solution
         // console.log("Got response")
-        let object = JSON.parse(Http.responseText)
+        let object = JSON.parse(Http.responseText)['data']
         // console.log(object)
         //loop through and create a list of better stream objects
         for (let z in object) {
