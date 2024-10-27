@@ -85,7 +85,7 @@ window.onload = function () {
     //we subtract this from right now to get a number, that way if it's 2:01PM and the stream happens at 2:00pm, it still shows up
     //current value: 5 hours
     let gracePeriod = 18000000
-    const url = 'https://crud.eribyte.net/getStreams/3/' + (rightNowMs - gracePeriod).toString();
+    const url = 'https://crud-stage.eribyte.net/getStreams/3/' + (rightNowMs - gracePeriod).toString();
     Http.open("GET", url);
     Http.send();
 
