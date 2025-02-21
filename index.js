@@ -32,7 +32,7 @@ function updateCountdownCheck() {
       // Get to rendering the time countdown.
       renderStreamCountdown(delta);
       timerSet = true;
-    } else if (delta + 60 * 60 * 2 > 0) {
+    } else if (delta + 1000 * 60 * soonestStream.duration > 0) {
       // If the start time is within 2 hours, show the streaming now banner.
       streamCountdownEle.hidden = true;
       streamNowEle.hidden = false;
@@ -109,6 +109,7 @@ window.onload = function () {
     //as defined by any stream starting between now and 7 days worth of MS in the future. This is a bad solution
     // console.log("Got response")
     let object = JSON.parse(Http.responseText)["data"];
+
     // console.log(object)
     //loop through and create a list of better stream objects
     for (let z in object) {
@@ -119,20 +120,28 @@ window.onload = function () {
       let streamDate = new Date(
         Date.UTC(t[0], t[1] - 1, dayHourSplit[0], dayHourSplit[1], t[3], 0)
       );
-      streams.push({ stream: data.streamName, date: streamDate });
+      streams.push({
+        stream: data.streamName,
+        date: streamDate,
+        duration: data.duration,
+      });
     }
     //get time zone
     let zone = new Date()
       .toLocaleTimeString("en-us", { timeZoneName: "short" })
       .split(" ")[2];
     //loop through the days, starting with today
+
     for (let i = 0; i < 7; i++) {
       // console.log(dateWeekdayNames[(weekday + i) % 7])
       //o(n^2), does js have a filter method?
       let streamObject = null;
       for (let z in streams) {
         //if there is a stream today
-        if (streams[z].date.getDay() == (weekday + i) % 7) {
+        if (
+          streams[z].date.getDate() == d.getDate() &&
+          streams[z].date.getMonth() == d.getMonth()
+        ) {
           streamObject = streams[z];
           break;
         }
@@ -181,13 +190,9 @@ window.onload = function () {
 
       d = d.addDays(1);
     }
-    streams = streams
-      .filter((value) => {
-        return value.date > rightNowMs;
-      })
-      .sort((a, b) => {
-        return a.date.getTime() - b.date.getTime();
-      });
+    streams = streams.sort((a, b) => {
+      return a.date.getTime() - b.date.getTime();
+    });
     updateCountdownCheck();
     updateCountdownTimer = setInterval(updateCountdownCheck, 1000);
   };
