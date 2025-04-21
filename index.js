@@ -9,6 +9,7 @@ let streams = [];
 let streamNowEle = document.getElementById("streamNow");
 let streamCountdownEle = document.getElementById("streamCountdown");
 let updateCountdownTimer;
+let special_stream = true;
 
 function updateCountdownCheck() {
   // Buffer time is 2 hours.
@@ -195,5 +196,64 @@ window.onload = function () {
     });
     updateCountdownCheck();
     updateCountdownTimer = setInterval(updateCountdownCheck, 1000);
+
+    // ###################### SPECIAL STREAM SECTIONS ############################
+
+    if (!special_stream) {
+      return;
+    }
+
+    const specialCountdownElement = document.getElementById("specialCountdown");
+    const localTimeDisplayElement = document.getElementById("localTimeDisplay");
+
+    if (!specialCountdownElement || !localTimeDisplayElement) return;
+
+    const streamDate = new Date(Date.UTC(2025, 4, 18, 16, 0, 0));
+
+    // Display the local time
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      timeZoneName: "short",
+    };
+
+    const localTimeString = streamDate.toLocaleString(undefined, options);
+    localTimeDisplayElement.innerHTML = localTimeString;
+
+    // Function to update countdown
+    function updateSpecialCountdown() {
+      const now = new Date();
+      const difference = streamDate - now;
+
+      if (difference <= 0) {
+        specialCountdownElement.innerHTML = "Stream has ended";
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      let countdownString = "";
+      if (days > 0) {
+        countdownString += `${days}d `;
+      }
+      countdownString += `${String(hours).padStart(2, "0")}:${String(
+        minutes
+      ).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+
+      specialCountdownElement.innerHTML = countdownString;
+    }
+
+    // Update immediately and then every second
+    updateSpecialCountdown();
+    setInterval(updateSpecialCountdown, 1000);
   };
 };

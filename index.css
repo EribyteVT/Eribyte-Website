@@ -222,3 +222,33 @@ footer a:visited {
 .hidden {
   display: none;
 }
+
+.specialStreamCountdown {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  background-color: #dddddd;
+  border-radius: 25px;
+  border: 4px solid black;
+  font-size: 2em;
+  color: black;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.specialStreamTitle {
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+.specialStreamLocalTime {
+  font-size: 0.8em;
+  margin-bottom: 0.3em;
+}
+
+.specialStreamTimer {
+  font-weight: bold;
+  font-size: 1.2em;
+}
