@@ -208,7 +208,7 @@ window.onload = function () {
 
     if (!specialCountdownElement || !localTimeDisplayElement) return;
 
-    const streamDate = new Date(Date.UTC(2025, 4, 18, 16, 0, 0));
+    const streamDate = new Date(Date.UTC(2025, 4, 25, 16, 0, 0));
 
     // Display the local time
     const options = {
