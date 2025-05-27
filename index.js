@@ -9,7 +9,7 @@ let streams = [];
 let streamNowEle = document.getElementById("streamNow");
 let streamCountdownEle = document.getElementById("streamCountdown");
 let updateCountdownTimer;
-let special_stream = true;
+let special_stream = false;
 
 function updateCountdownCheck() {
   // Buffer time is 2 hours.
